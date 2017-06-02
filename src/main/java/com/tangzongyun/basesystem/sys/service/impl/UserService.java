@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -27,14 +29,19 @@ import com.tangzongyun.basesystem.sys.service.IUserService;
 @Service("userService")
 public class UserService implements IUserService{
 	@Autowired
+//	@Resource
 	MenuRepository menuRepository;
 	@Autowired
+//	@Resource
 	RoleRepository roleRepository;
 	@Autowired
+//	@Resource
 	UserRepository userRepository;
 	@Autowired
+//	@Resource(name="roleMenuRepository")
 	RoleMenuRepository rmRepository;
 	@Autowired
+//	@Resource(name="userRoleRepository")
 	UserRoleRepository urRepository;
 	
 	

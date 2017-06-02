@@ -14,7 +14,7 @@
             http://www.springframework.org/schema/tx/spring-tx.xsd
             http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
             ">
-
+	<context:property-placeholder location="classpath*:db.properties" />
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="${datasource.connection.driver_class}" />
 		<property name="jdbcUrl" value="${datasource.connection.url}" />
@@ -142,6 +142,9 @@
                 /user/login=anon
                 /user/*=authc
                 /user/form=roles[admin]
+                /login/login=anon
+                /user/list=anon
+                /user/test=anon
             </value>
         </property>
     </bean>

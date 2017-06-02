@@ -9,16 +9,17 @@
 	   		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
 			">
 
-	<context:property-placeholder location="classpath*:db.properties" />
-	<context:annotation-config />
-	<context:component-scan base-package="com.tangzongyun.basesystem">
 
+	<context:annotation-config />
+	<!-- <context:component-scan base-package="com.tangzongyun.basesystem">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
-	</context:component-scan>
+	</context:component-scan> -->
 	
+	<context:component-scan base-package="com.tangzongyun.basesystem"/>
+
 	<mvc:annotation-driven />
-	<import resource="hibernate-context.xml" />
+	<!-- <import resource="hibernate-context.xml" /> -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
@@ -28,8 +29,10 @@
 		</property>
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
-	
+
+
 	<!-- <bean class="com.tangzongyun.basesystem.com.SysSwaggerConfig" /> -->
+
+
 
 </beans>

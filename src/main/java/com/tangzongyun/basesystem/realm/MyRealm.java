@@ -1,6 +1,7 @@
 package com.tangzongyun.basesystem.realm;
 
 
+
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -13,13 +14,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tangzongyun.basesystem.sys.domain.User;
 import com.tangzongyun.basesystem.sys.repository.UserRepository;
+import com.tangzongyun.basesystem.sys.service.IRoleService;
 import com.tangzongyun.basesystem.sys.service.IUserService;
 
 
 public class MyRealm extends AuthorizingRealm{
+		@Autowired
+		IRoleService roleService;
 	    @Autowired
+		//@Resource
 		UserRepository userRepository;
 	    @Autowired
+		//@Resource
 	  	IUserService userService;
 	  /**
 	     * 为当前登录的用户授予角色和权限
